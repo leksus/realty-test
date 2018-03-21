@@ -2,9 +2,25 @@
 
 Приложение Apartments
 
-## Development server
+## Запуск приложения
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Разворачивание и запуск приложения произодтся с помощью docker-compose
+
+Команды для запуска приложения в двух режимах компиляции:
+
+
+Для запуска в режиме jit
+```
+docker-compose up --build run-jit
+
+```
+
+Для запуска в режиме aot
+```
+docker-compose up --build run-aot
+
+```
+
 
 ## Code scaffolding
 

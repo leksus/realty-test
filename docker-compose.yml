@@ -1,7 +1,13 @@
 version: '3'
 
 services:
-  angular:
+  run-jit:
     build: .
     ports:
       - 4200:4200
+    command: ["npm", "run", "start"]
+  run-aot:
+    build: .
+    ports:
+      - 4200:4200
+    command: ["npm", "run", "start-aot"]

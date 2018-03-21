@@ -13,8 +13,8 @@ import {ApartmentFilter} from '../../interface/apartment-filter';
 })
 export class ApartmentListComponent implements OnInit {
 
-    private apartments$: Observable<Apartment[]>;
-    private dataFilter: ApartmentFilter;
+    apartments$: Observable<Apartment[]>;
+    dataFilter: ApartmentFilter;
 
     constructor(
         private apartmentsService: ApartmentsService,
@@ -35,7 +35,7 @@ export class ApartmentListComponent implements OnInit {
     /**
      * Применение фильтра
      */
-    private applyFilter(): void {
+    applyFilter(): void {
         const filter = this.getCleanFilter(this.dataFilter);
         // Делаем привязку фильтра к параметрам урла
         this.router.navigate(['/apartments', filter])
@@ -44,7 +44,7 @@ export class ApartmentListComponent implements OnInit {
     /**
      * Сброс фильтра
      */
-    private resetFilter(): void {
+    resetFilter(): void {
         this.initFilter();
         this.router.navigate(['/apartments']);
     }

@@ -11,7 +11,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class ApartmentComponent implements OnInit {
 
-    private apartment$: Observable<Apartment>;
+    apartment$: Observable<Apartment>;
 
     constructor(
         private apartmentsService: ApartmentsService,

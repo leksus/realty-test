@@ -9,7 +9,7 @@ import {Observable} from "rxjs/Observable";
 })
 export class MainComponent implements OnInit {
 
-    private apartmentsCount$: Observable<number>;
+    apartmentsCount$: Observable<number>;
 
     constructor(private apartmentsService: ApartmentsService) { }
 
