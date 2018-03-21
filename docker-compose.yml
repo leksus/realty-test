@@ -11,3 +11,13 @@ services:
     ports:
       - 4200:4200
     command: ["npm", "run", "start-aot"]
+  run-nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    environment:
+      NODE_ENV: production
+    ports:
+      - 801:80
+    ## set your startup file here
+    command: [nginx-debug, '-g', 'daemon off;']

@@ -4,40 +4,34 @@
 
 ## Запуск приложения
 
-Разворачивание и запуск приложения произодтся с помощью docker-compose
+Разворачивание и запуск приложения производится с помощью docker-compose
 
-Команды для запуска приложения в двух режимах компиляции:
+**Команды для сборки и запуска приложения в разных режимах компиляции:**
 
 
-Для запуска в режиме jit
+Для запуска в режиме jit с помощью сервера angular-cli
 ```
-docker-compose up --build run-jit
-
-```
-
-Для запуска в режиме aot
-```
-docker-compose up --build run-aot
+docker-compose up run-jit
 
 ```
 
+Для запуска в режиме aot с помощью сервера angular-cli
+```
+docker-compose up run-aot
 
-## Code scaffolding
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Для сборки проекта в production и запуска с помощью сервера nginx
+```
+docker-compose up run-nginx
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+```
 
-## Running unit tests
+Для остановки приложения можно нажать ctrl+c либо выполнить команду
+```
+docker-compose stop
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Далее нужно открыть в браузере http://localhost:4200 
