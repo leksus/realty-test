@@ -1,0 +1,59 @@
+<div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Этаж</span>
+                        </div>
+                        <input [(ngModel)]="dataFilter.floorUp" class="form-control" placeholder="От">
+                        <input [(ngModel)]="dataFilter.floorTo" class="form-control" placeholder="До">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Комнат</span>
+                        </div>
+                        <input [(ngModel)]="dataFilter.roomsCountUp" class="form-control" placeholder="От">
+                        <input [(ngModel)]="dataFilter.roomsCountTo" class="form-control" placeholder="До">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Площадь</span>
+                        </div>
+                        <input [(ngModel)]="dataFilter.areaUp" class="form-control" placeholder="От">
+                        <input [(ngModel)]="dataFilter.areaTo" class="form-control" placeholder="До">
+                    </div>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" (click)="applyFilter()">Применить</button>
+                    <button type="button" class="btn btn-danger" (click)="resetFilter()">Сбросить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngFor="let item of apartments$ | async" class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-3">
+                    <img class="img-thumbnail" src="{{item.photo}}" alt="Card image cap">
+                </div>
+                <div class="col-9">
+                    <h5 class="card-title">Квартира</h5>
+                    <p class="card-text">Адрес: ул. {{item.street}}, дом {{item.houseNumber}}</p>
+                    <p class="card-text">Этаж: {{item.floor}}</p>
+                    <p class="card-text">Кол-во комнат: {{item.roomsCount}}</p>
+                    <p class="card-text">Площадь: {{item.area}} кв. м.</p>
+                    <a routerLink="/apartment/{{item.id}}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

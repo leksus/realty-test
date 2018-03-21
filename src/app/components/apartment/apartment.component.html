@@ -1,0 +1,20 @@
+<div class="mb-3">
+    <a routerLink="/apartments" class="btn btn-primary">Список квартир</a>
+</div>
+
+<div class="card mb-3" *ngIf="apartment$ | async as apartment">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <img class="img-fluid" src="{{apartment.photo}}" alt="Card image cap">
+            </div>
+            <div class="col-6">
+                <h5 class="card-title">Квартира</h5>
+                <p class="card-text">Адрес: ул. {{apartment.street}}, дом {{apartment.houseNumber}}</p>
+                <p class="card-text">Этаж: {{apartment.floor}}</p>
+                <p class="card-text">Кол-во комнат: {{apartment.roomsCount}}</p>
+                <p class="card-text">Площадь: {{apartment.area}} кв. м.</p>
+            </div>
+        </div>
+    </div>
+</div>
